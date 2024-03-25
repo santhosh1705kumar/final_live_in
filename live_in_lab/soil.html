@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="loginstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@200&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"] {
+            display: none;
+        }
+        .upload-btn {
+            background-color: #8e6806;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+        .upload-btn:hover {
+            background-color: #8e8200;
+        }
+        #image-preview {
+            margin-top: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .progress-bar {
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .progress {
+            background-color: #1f497d;
+            height: 20px;
+            width: 0;
+            transition: width 0.1s ease-in-out;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            color:white;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+        nav .heading
+        {
+            margin-left: 620px;
+            position: fixed;
+            font-family:"Monoton", sans-serif;           
+            font-weight: 400;
+            font-style: normal;
+            font-size:25px;
+            letter-spacing: 1px;
+            
+        }
+        nav li {
+            margin-top:10px;
+            padding: 20px;
+            list-style-type: none;
+            margin-left:20px;
+           
+        }
+        
+        
+
+        nav li a {
+
+            text-decoration: none;
+            color:rgb(255, 255, 255);
+           
+        }
+
+        .tools .t1 {
+            display: none;
+        }
+
+        .tools:hover .t1 {
+            display: block;
+
+           
+        }
+         .tools:hover .t1:hover {
+            border:2px solid white;
+            
+
+           
+        }
+
+        .forest,
+        .mountain {
+            position: fixed;
+            bottom: -200px;
+            opacity: 0;
+        }
+
+        .forest {
+            left: 0;
+            z-index: -1;
+            animation: slideInForest 2s ease-out forwards;
+        }
+
+        .mountain {
+            right: 0;
+            z-index: -2;
+            animation: slideInMountain 3s ease-out forwards;
+        }
+
+        @keyframes slideInForest {
+            from {
+                bottom: -200px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: -100px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInMountain {
+            from {
+                bottom: -400px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: -40px;
+                opacity: 1;
+            }
+        }
+
+        .neo {
+            position: fixed;
+            top: 50%;
+            margin-top:40px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 500px;
+            background-color: #ffffffbd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: slide 5s ease-out forwards;
+            z-index: 1;
+        }
+        .neo p
+        {
+            text-align: justify;
+            padding:50px;
+            font-size:16px;
+            color:black;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slide {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        nav .tools:hover
+        {
+            color:rgb(121, 209, 55);
+        }
+         .nav .home a:hover
+         {
+            
+            color:rgb(121, 209, 55);
+        
+         }
+         .neo .pred 
+         {
+            display:flex;
+            justify-content:space-evenly;
+            
+         }
+         .neo .pred a
+         {
+            margin-top:20px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+
+            
+         }
+         .neo .pred a:hover
+         {
+           
+            color:rgb(0, 0, 0);
+            font-size:20px;
+            color:red;
+            font-weight: bold;
+
+            
+            
+         }
+         
+         .neo .pred .inner
+         {
+            display:flex;
+            justify-content: space-evenly;
+            border:1px solid black;
+            padding:20px;
+         }
+         .neo .pred .inner a
+         {
+            margin-top:35px;
+            letter-spacing:2px;
+         }
+         
+         .container 
+         {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* Add padding for spacing */
+            box-sizing: border-box; /* Include padding in the height calculation */
+        }
+    
+
+
+         
+         
+         
+    </style>
+</head>
+
+<body>
+    <div class="neo">
+        <p>Soil is a fundamental component of ecosystems, providing nutrients and support for plant growth. Its composition and fertility vary, impacting agricultural productivity and environmental health. Understanding soil properties is crucial for sustainable land management.</p>
+        <!-- <div class="pred">
+            <div class="inner"> 
+                <img src="leaf1.png" alt="" width="90px" height="99px" class="leaf">
+                <a href="" style="margin-left:20px;margin-right:20px;">Leaf Disease</a>
+            </div>
+            <div class="inner">
+                <img src="soil.png" alt="" width="80px" height="99px" class="soil">
+                <a href="" style="margin-left:20px;margin-right:20px;">Soil Type</a>
+            </div>
+            <div class="inner">
+                <img src="fert.png" alt="" width="120px" height="109px" class="soil">
+                <a href="" style="margin-left:20px;margin-right:20px;">Fertilizer</a>
+            </div>
+        </div> -->
+        <center>
+        <div id="container"><form id="detection-form" enctype="multipart/form-data">
+            <input type="file" id="file-input" name="image"  accept="image/*" required>
+            <label for="file-input" class="upload-btn">Upload Image</label>
+            <div id="image-preview"></div>
+            <button type="submit" class="upload-btn" onclick="uploadImage()">Detect Image</button>
+        </form>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        
+        </div>
+        </center>
+    </div>        
+    </div>
+    <nav class="nav">
+     <li class="Back"><a href="homepage.html">Home</a></li>
+        <!-- <li class="tools">Tools
+            <ul>
+                <li class="t1"><a href="">Soil prediction</a></li>
+                <li class="t1"><a href="">Disease prediction</a></li>
+                <li class="t1"><a href="">Fertilizer</a></li>
+            </ul>
+        </li>  -->
+        <p class="heading"> SOIL PREDICTION </p>
+    </nav>
+    
+    <!-- <img src="forest1.png" width="100%" alt="Forest" class="forest"> -->
+    <!-- <img src="mountain.png" alt="Mountain" class="mountain"> -->
+    <script>
+        document.getElementById('file-input').addEventListener('change', function(event) {
+            var file = event.target.files[0];
+            var imageType = /image.*/;
+    
+            if (file.type.match(imageType)) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var img = new Image();
+                    img.src = reader.result;
+                    img.width = 200; 
+                    document.getElementById('image-preview').innerHTML = '';
+                    document.getElementById('image-preview').appendChild(img);
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    
+        document.getElementById('detection-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var progressBar = document.querySelector('.progress');
+            var width = 0;
+            var interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                   
+                    
+                    // setTimeout(function() {
+                    //     window.location.href = 'index.html';
+                    // }, 5000); 
+                } else {
+                    width += 20;
+                    progressBar.style.width = width + '%';
+                }
+            }, 700);
+        });
+    </script>
+</body>
+
+</html>

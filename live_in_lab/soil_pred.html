@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Suggestion Based On The Type Of Soil</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for organic form -->
+    <style>
+        /* Style for organic form */
+        .organic-form {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        .organic-form h2 {
+            color: #28a745;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Crop Suggestion Based On The Type Of Soil</h1>
+        <div class="organic-form">
+            <center>
+                <div class="login-header">
+                    <img src="images/result.jpg" alt="Farmer Image" style="width: 200px;">
+                </div>
+                <br>
+                <p>Soil is a fundamental component of ecosystems, providing nutrients and support for plant growth. Its composition and fertility vary, impacting agricultural productivity and environmental health. Understanding soil properties is crucial for sustainable land management.</p> 
+            <form id="uploadForm" class="mt-5">
+                <div class="mb-3">
+                    <label for="imageUpload" class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" id="imageUpload" accept="image/*">
+                </div>
+                <button type="button" class="btn btn-primary btn-lg btn-bigger" id="uploadBtn">Upload</button>
+                <button type="button" class="btn btn-success btn-lg btn-bigger" id="detectBtn" style="display: none;">Detect</button>
+            </form>
+            <div id="imagePreview" class="mt-3"></div>
+        </center>
+        </div>
+        </div>
+        
+
+    <!-- Bootstrap JS and jQuery (required for Bootstrap) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script>
+        $(document).ready(function () {
+            // Image upload preview
+            $('#imageUpload').on('change', function (e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#imagePreview').html(`<img src="${e.target.result}" class="img-fluid" alt="Image Preview">`);
+                        $('#detectBtn').show(); // Show detect button after image upload
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+
+            // Redirect to result page on detect button click
+            $('#detectBtn').on('click', function () {
+                window.location.href = 'result.html'; // Change 'result.html' to your actual result page URL
+            });
+
+            // You can add code here to handle the image upload and detection logic using backend services
+            // For simplicity, this example focuses on the front-end functionality only.
+        });
+    </script>
+</body>
+
+</html>

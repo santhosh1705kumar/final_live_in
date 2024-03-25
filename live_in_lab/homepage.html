@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="loginstyle.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Poppins:wght@200&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-start;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            color:white;
+            font-weight: bold;
+            border-radius: 15px;
+        }
+        nav .heading
+        {
+            margin-left: 620px;
+            position: fixed;
+            font-family:"Monoton", sans-serif;           
+            font-weight: 400;
+            font-style: normal;
+            font-size:25px;
+            letter-spacing: 1px;
+            
+        }
+        nav li {
+            margin-top:10px;
+            padding: 20px;
+            list-style-type: none;
+            margin-left:20px;
+           
+        }
+        
+        
+
+        nav li a {
+
+            text-decoration: none;
+            color:rgb(255, 255, 255);
+           
+        }
+
+        .tools .t1 {
+            display: none;
+        }
+
+        .tools:hover .t1 {
+            display: block;
+
+           
+        }
+         .tools:hover .t1:hover {
+            border:2px solid white;
+            
+
+           
+        }
+
+        .forest,
+        .mountain {
+            position: fixed;
+            bottom: -200px;
+            opacity: 0;
+        }
+
+        .forest {
+            left: 0;
+            z-index: -1;
+            animation: slideInForest 2s ease-out forwards;
+        }
+
+        .mountain {
+            right: 0;
+            z-index: -2;
+            animation: slideInMountain 3s ease-out forwards;
+        }
+
+        @keyframes slideInForest {
+            from {
+                bottom: -200px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: -100px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInMountain {
+            from {
+                bottom: -400px;
+                opacity: 1;
+            }
+
+            to {
+                bottom: -40px;
+                opacity: 1;
+            }
+        }
+
+        .neo {
+            position: fixed;
+            top: 50%;
+            margin-top:40px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1000px;
+            height: 500px;
+            background-color: #ffffffbd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            animation: slide 5s ease-out forwards;
+            z-index: 1;
+        }
+        .neo p
+        {
+            text-align: justify;
+            padding:50px;
+            font-size:16px;
+            color:black;
+            letter-spacing: 2px;
+        }
+
+        @keyframes slide {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        nav .tools:hover
+        {
+            color:rgb(121, 209, 55);
+        }
+         .nav .home a:hover
+         {
+            
+            color:rgb(121, 209, 55);
+        
+         }
+         .neo .pred 
+         {
+            display:flex;
+            justify-content:space-evenly;
+            
+         }
+         .neo .pred a
+         {
+            margin-top:20px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+
+            
+         }
+         .neo .pred a:hover
+         {
+           
+            color:rgb(0, 0, 0);
+            font-size:20px;
+            color:red;
+            font-weight: bold;
+
+            
+            
+         }
+         
+         .neo .pred .inner
+         {
+            display:flex;
+            justify-content: space-evenly;
+            border:1px solid black;
+            padding:20px;
+         }
+         .neo .pred .inner a
+         {
+            margin-top:35px;
+            letter-spacing:2px;
+         }
+         
+         
+         
+    </style>
+</head>
+
+<body>
+    <div class="neo">
+        <p>Our website helps farmers and gardeners choose the right crops and learn about their soil. Users can enter details like the type of crop, soil, and fertilizer they want to use. Then, they get personalized suggestions on the best crops for their specific conditions. We also have a cool feature where users can upload photos of their soil or plants. Our system then analyzes these images to show how the plants are growing or what type of soil is in the picture. This helps users make better decisions and improve their farming results</p>
+        <div class="pred">
+            <div class="inner"> 
+                <img src="images/leaf1.png" alt="" width="90px" height="99px" class="leaf">
+                <a href="pred.html" style="margin-left:20px;margin-right:20px;">Leaf Disease</a>
+            </div>
+            <div class="inner">
+                <img src="images/soil.png" alt="" width="80px" height="99px" class="soil">
+                <a href="soil_pred.html" style="margin-left:20px;margin-right:20px;">Soil Type</a>
+            </div>
+            <div class="inner">
+                <img src="images/fert.png" alt="" width="120px" height="109px" class="soil">
+                <a href="pred.html" style="margin-left:20px;margin-right:20px;">Fertilizer</a>
+            </div>
+        </div>
+        
+    </div>
+    <nav class="nav">
+        <li class="home"><a href="homepage.html">Home</a></li>
+        <li class="t1"><a href="login.html">login</a></li>
+        <li class="tools">Tools
+            <ul>
+                <li class="t1"><a href="">Soil prediction</a></li>
+                <li class="t1"><a href="">Disease prediction</a></li>
+                <li class="t1"><a href="">Fertilizer</a></li>
+            </ul>
+        </li>
+        <p class="heading"> PREDICTION WEB</p>
+    </nav>
+    
+    <img src="images/forest1.png" width="100%" alt="Forest" class="forest">
+    <img src="images/mountain.png" alt="Mountain" class="mountain">
+</body>
+
+</html>
